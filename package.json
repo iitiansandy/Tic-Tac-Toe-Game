@@ -1,0 +1,16 @@
+{
+  "name": "tic-tac-toe-game",
+  "version": "1.0.0",
+  "description": "Simple Node.js, Socket.io and Express use for double player tic tac toe game.",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "sandeep kumar",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "ws": "^8.12.1"
+  }
+}
