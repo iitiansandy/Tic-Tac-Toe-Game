@@ -4,28 +4,28 @@
 Preface: You will write a simple server that allows playing Tic-Tac-Toe game between two command-line
 clients. </br>
 <h3>Functionality:</h3> </br>
-The server will be started like: node server.js 5050 </br>
+The server will be started like: <strong>node server.js 5050</strong> </br>
 The server will listen on the specified port (5050) for clients to connect. </br>
-The client will be started like: node client.js 127.0.0.1 5050 </br>
-The client will connect to the server at the specified IP (127.0.0.1) and port (5050). Upon
-connection the client will display a message and prompt, like: connected to 127.0.0.1 5050
+The client will be started like: <strong>node client.js 127.0.0.1 5050</strong> </br>
+The client will connect to the server at the <strong>specified IP (127.0.0.1)</strong> and <strong>port (5050)</strong>. Upon
+connection the client will display a message and prompt, like: <strong>connected to 127.0.0.1 5050</strong>
 When two clients have connected to the server, the game will begin. The server will send each
-client the message: Game started. You are the [first | second] player. </br>
+client the message: <strong>Game started. You are the [first | second] player</strong>. </br>
 The Tic-Tac-Toe board is numbered like this: </br>
 <strong>1</strong></br><strong>2</strong></br><strong>3</strong></br><strong>4</strong></br><strong>5</strong></br><strong>6</strong></br><strong>7</strong></br><strong>8</strong></br><strong>9</strong></br>
 The first player can then send a move like: </br>
-> 5 </br>
-This move would place an <strong>‘X’</strong> at square number 5. </br>
+> <strong>5</strong> </br>
+This move would place an <strong>‘X’</strong> at square number <strong>5</strong>. </br>
 When the move is accepted by the server, it sends the current board position to both clients, like: </br>
-<strong>...</strong> </br>
-<strong>.x.</strong> </br>
-<strong>...</strong> </br>
+<strong>.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
+<strong>.&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
+<strong>.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
 Let’s say the second player make the move: </br>
 > <strong>9</strong> </br>
 Both clients would then receive the new board position of: </br>
-<strong>...</strong> </br>
-<strong>.x.</strong> </br>
-<strong>..o</strong> </br>
+<strong>.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
+<strong>.&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
+<strong>.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;o</strong> </br>
 Either player can resign the game at any time, by sending <strong>‘r’</strong>. Even when waiting for the opponent
 to move. The player who resigned loses the game. When the game is over, the server sends both
 players a result message, like: <strong>Game won by [first | second] player. Or Game is tied.</strong> </br>
