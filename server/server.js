@@ -66,8 +66,8 @@ class Game {
 
     start() {
         // Send the initial board state to both players
-        this.player1.send(`START ${this.serializeBoard()}`);
-        this.player2.send(`START ${this.serializeBoard()}`);
+        this.player1.send(`START the Game ${this.serializeBoard()}`);
+        this.player2.send(`START the Game ${this.serializeBoard()}`);
     }
 
     end() {
@@ -114,8 +114,12 @@ class Game {
 
                 // Check if the game has ended
                 if (this.checkWin()) {
+                    this.player1.send(`${this.currentPlayer} WON THE GAME`);
+                    this.player2.send(`${this.currentPlayer} WON THE GAME`);
                     this.end();
                 } else if (this.checkTie()) {
+                    this.player1.send(`GAME IS TIED`);
+                    this.player2.send(`GAME IS TIED`);
                     this.end();
                 } else {
                     // Notify both players of the new board state and whose turn it is
@@ -130,7 +134,7 @@ class Game {
         }
     }
     serializeBoard() {
-        return this.board.map((row) => row.join('')).join('');
+        return this.board.map((row) => row.join(' ')).join('  ');
     }
 
     checkWin() {
