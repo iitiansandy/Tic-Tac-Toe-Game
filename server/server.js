@@ -66,8 +66,8 @@ class Game {
 
     start() {
         // Send the initial board state to both players
-        this.player1.send(`START the Game ${this.serializeBoard()}`);
-        this.player2.send(`START the Game ${this.serializeBoard()}`);
+        this.player1.send(`START the Game : ${this.serializeBoard()}`);
+        this.player2.send(`START the Game : ${this.serializeBoard()}`);
     }
 
     end() {
@@ -104,7 +104,7 @@ class Game {
 
                 // Check if the move is valid
                 if (this.board[row][col] !== '_') {
-                    player.send(`INVALID MOVE ${row} ${col}`);
+                    player.send(`INVALID MOVE --> ${row} ${col}`);
                     return;
                 }
 
@@ -124,12 +124,12 @@ class Game {
                 } else {
                     // Notify both players of the new board state and whose turn it is
                     const boardState = this.serializeBoard();
-                    this.player1.send(`UPDATE ${boardState} ${this.currentPlayer === this.player1}`);
-                    this.player2.send(`UPDATE ${boardState} ${this.currentPlayer === this.player2}`);
+                    this.player1.send(`UPDATED BOARD --> ${boardState} ${this.currentPlayer === this.player1}`);
+                    this.player2.send(`UPDATED BOARD --> ${boardState} ${this.currentPlayer === this.player2}`);
                 }
                 break;
             default:
-                player.send(`UNKNOWN COMMAND ${command}`);
+                player.send(`UNKNOWN COMMAND --> ${command}`);
                 break;
         }
     }
