@@ -145,6 +145,13 @@ class Game {
             }
         }
 
+        // Check columns
+        for (let cols = 0; cols<3; cols++) {
+            if (this.board[0][cols] !== '_' && this.board[0][cols] === this.board[1][cols] && this.board[0][cols] === this.board[2][cols]) {
+                return true;
+            }
+        }
+
         // Check diagonals
         if (this.board[0][0] !== '_' && this.board[0][0] === this.board[1][1] && this.board[0][0] === this.board[2][2]) {
             return true;
