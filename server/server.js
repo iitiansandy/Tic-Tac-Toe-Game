@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 
-// create a new WebSocket server on port 8080
+// create a new WebSocket server on port 5050
 const server = new WebSocket.Server({ port: 5050 });
 
 let game = null;
@@ -72,8 +72,8 @@ class Game {
 
     end() {
         // Notify both players that the game has ended
-        this.player1.send('END');
-        this.player2.send('END');
+        this.player1.send('GAME ENDED');
+        this.player2.send('GAME ENDED');
     }
 
     handleMessage(player, message) {
@@ -82,7 +82,20 @@ class Game {
             return;
         }
 
-        const [command, ...args] = message //.split(' ');
+        const [command, ...args] = message.toString().split(' ');
+        /* 
+        The line const [command, ...args] = message.split(' '); is using destructuring assignment to extract the first word of the message string 
+        and store it in the command variable, and the remaining words in the args array.
+        The split method is used to split the message string into an array of words (using a space as the delimiter). The ...args syntax (also known as 
+        the "rest parameter") is used to collect the remaining words in the array into a new array called args.
+        For example, if message is "MOVE 1 2", the split method will return an array ['MOVE', '1', '2'], and the destructuring assignment will store 
+        'MOVE' in the command variable and ['1', '2'] in the args array.
+
+        let message = 'MOVE 1 2'
+        const [command, ...args] = message.split(' ');
+        console.log(command);  // MOVE
+        console.log(args); // [ '1', '2' ]
+        */
 
         switch (command) {
             case 'MOVE':
