@@ -114,8 +114,16 @@ class Game {
 
                 // Check if the game has ended
                 if (this.checkWin()) {
-                    this.player1.send(`${this.currentPlayer} WON THE GAME`);
-                    this.player2.send(`${this.currentPlayer} WON THE GAME`);
+                    if (this.currentPlayer === this.player1) {
+                        this.player1.send(`Player 2 WON THE GAME`);
+                        this.player2.send(`Player 2 WON THE GAME`);
+                        console.log(`Player 2 Won the Game`)
+                    } else {
+                        this.player1.send(`Player 1 WON THE GAME`);
+                        this.player2.send(`Player 1 WON THE GAME`);
+                        console.log(`Player 1 Won the Game`);
+                    }
+                    console.log("Game Ended");
                     this.end();
                 } else if (this.checkTie()) {
                     this.player1.send(`GAME IS TIED`);
