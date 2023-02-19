@@ -12,7 +12,7 @@ connection the client will display a message and prompt, like: <strong>connected
 When two clients have connected to the server, the game will begin. The server will send each
 client the message: <strong>Game started. You are the [first | second] player</strong>. </br>
 The Tic-Tac-Toe board is numbered like this: </br>
-<strong>1</strong></br><strong>2</strong></br><strong>3</strong></br><strong>4</strong></br><strong>5</strong></br><strong>6</strong></br><strong>7</strong></br><strong>8</strong></br><strong>9</strong></br>
+<strong>_&nbsp;</strong><strong>2&nbsp;</strong><strong>3&nbsp;&nbsp;</strong><strong>4&nbsp;</strong><strong>5&nbsp;</strong><strong>6&nbsp;&nbsp;</strong><strong>7&nbsp;</strong><strong>8&nbsp;</strong><strong>9</strong></br>
 The first player can then send a move like: </br>
 > <strong>5</strong> </br>
 This move would place an <strong>‘X’</strong> at square number <strong>5</strong>. </br>
