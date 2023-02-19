@@ -12,16 +12,16 @@ connection the client will display a message and prompt, like: <strong>connected
 When two clients have connected to the server, the game will begin. The server will send each
 client the message: <strong>Game started. You are the [first | second] player</strong>. </br>
 The Tic-Tac-Toe board is numbered like this: </br>
-<strong>_&nbsp;</strong><strong>2&nbsp;</strong><strong>3&nbsp;&nbsp;</strong><strong>4&nbsp;</strong><strong>5&nbsp;</strong><strong>6&nbsp;&nbsp;</strong><strong>7&nbsp;</strong><strong>8&nbsp;</strong><strong>9</strong></br>
+<strong>_&nbsp;&nbsp;</strong><strong>_&nbsp;&nbsp;</strong><strong>_&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong>_&nbsp;&nbsp;</strong><strong>_&nbsp;&nbsp;</strong><strong>_&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong>_&nbsp;&nbsp;</strong><strong>_&nbsp;&nbsp;</strong><strong>_</strong></br>
 The first player can then send a move like: </br>
-> <strong>5</strong> </br>
+> <strong>MOVE 1 1</strong> </br>
 This move would place an <strong>‘X’</strong> at square number <strong>5</strong>. </br>
 When the move is accepted by the server, it sends the current board position to both clients, like: </br>
 <strong>.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
 <strong>.&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
 <strong>.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
 Let’s say the second player make the move: </br>
-> <strong>9</strong> </br>
+> <strong>MOVE 2 2</strong> </br>
 Both clients would then receive the new board position of: </br>
 <strong>.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
 <strong>.&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;.</strong> </br>
