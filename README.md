@@ -63,7 +63,7 @@ skills and problem solving skills. </br>
 
 1. Save the `server.js` file and start the server by running `node server.js`. </br>
 2. Open two command-line windows and connect to the server using the `wscat` command (you can install it using `npm install -g wscat`). </br>
-3. Run `wscat -c ws://localhost:8080` in both windows to connect to the server. </br>
+3. Run `wscat -c ws://localhost:5050` in both windows to connect to the server. </br>
 4. The first player to connect will be assigned player 1 and the second player will be assigned player 2. Once both players are connected, the game will start and the current board state will be sent to both players. </br>
 5. To make a move, send a message in the format <strong>MOVE</strong> <strong>row col</strong> (where row and col are integers between <strong>0</strong> and <strong>2</strong>). The server will validate the move and notify both players of the new board state and whose turn it is. </br>
 6. The game will end when a player wins or there is a tie. Both players will be notified that the game has ended.
